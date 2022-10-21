@@ -96,7 +96,7 @@ RESTART:
 				valid++
 				c := color.New(color.FgHiGreen).Add(color.Underline).Add(color.Bold)
 				c.Printf("Group Name: %d | Group ID: %d | Members: %d | https://www.roblox.com/groups/%d\n", groupinfo.Name, groupinfo.ID, groupinfo.MemberCount, groupinfo.ID)
-				resultfile, err := os.OpenFile("Config/results.txt", os.O_APPEND|os.O_WRONLY, 0644)
+				resultfile, err := os.OpenFile("config/results.txt", os.O_APPEND|os.O_WRONLY, 0644)
 				if err != nil {
 					fmt.Println(err)
 				}
@@ -154,7 +154,7 @@ func main() {
     color.White("The webhook might not send the message when a group is found,\nkeep track of the console.\n")
     color.White("")
     
-	cf, err := os.Open("Config/config.yml")
+	cf, err := os.Open("config/config.yml")
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -172,7 +172,7 @@ func main() {
 	go cpmcounter()
 	start = time.Now()
 
-	proxyFile, err := os.Open("Config/proxies.txt")
+	proxyFile, err := os.Open("config/proxies.txt")
 	if err != nil {
 		fmt.Println(err)
 	}
